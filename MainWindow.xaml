@@ -1,0 +1,72 @@
+﻿<Window x:Class="Chatbot_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        mc:Ignorable="d"
+        Title="CyberSecurity Awareness Chatbot"
+        Height="520" Width="820"
+        Background="Black">
+
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <TextBlock Grid.Row="0"
+                   Text="CyberSecurity Awareness Chatbot"
+                   FontSize="22"
+                   FontWeight="Bold"
+                   Foreground="Lime"
+                   Margin="0,0,0,10"/>
+
+        <!-- Chat display -->
+        <RichTextBox x:Name="Chatbot"
+                     Grid.Row="1"
+                     IsReadOnly="True"
+                     FontSize="14"
+                     FontWeight="Normal"
+                     Background="#0D0D0D"
+                     Foreground="Lime"
+                     Padding="10"
+                     BorderBrush="#333333"
+                     BorderThickness="1"
+                     VerticalScrollBarVisibility="Auto"
+                     Margin="0,0,0,10"/>
+        <ScrollViewer x:Name="ChatScroller"
+                      Grid.Row="1"
+                      VerticalScrollBarVisibility="Auto"
+                      Background="#0A0A0A">
+
+            <StackPanel x:Name="ChatPanel"
+                        Margin="10"/>
+        </ScrollViewer>
+
+        <!-- Input area -->
+        <DockPanel Grid.Row="2">
+            <Button Content="Send"
+                    DockPanel.Dock="Right"
+                    Width="100"
+                    Height="35"
+                    Background="#1A1A1A"
+                    Foreground="Lime"
+                    BorderBrush="Lime"
+                    BorderThickness="1"
+                    Click="SendBtn"/>
+            <TextBox x:Name="UserInput"
+                     Height="35"
+                     FontSize="14"
+                     Background="#1A1A1A"
+                     Foreground="Lime"
+                     CaretBrush="Lime"
+                     BorderBrush="#555555"
+                     BorderThickness="1"
+                     Padding="8,6"
+                     Margin="0,0,8,0"
+                     KeyDown="UserInput_KeyDown"/>
+        </DockPanel>
+    </Grid>
+</Window>
